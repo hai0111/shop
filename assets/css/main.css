@@ -250,6 +250,12 @@
     color: #25333C;
 }
 
+.detail__img {
+    max-height: 80vh;
+    object-position: 0 60%;
+    object-fit: cover;
+}
+
 .detail__name {
     font-size: 3rem;
 }
