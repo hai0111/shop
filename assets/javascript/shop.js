@@ -64,7 +64,7 @@ const renderProfucts = (z, x = "", v = "", p = "price1") => {
         })
         .map(a =>
             `<div class="product">
-    <a href="/detail.html?${data.product.indexOf(a)}" class="w-100 d-block product__img" style="background-image: url('${a.img}')">
+    <a href="detail.html?${data.product.indexOf(a)}" class="w-100 d-block product__img" style="background-image: url('${a.img}')">
         ${a.tag && a.tag !== "" ? '<span class="product__tag px-3">' + a.tag + '</span>' : ""}
     </a >
     <div class="product__info p-4">
@@ -119,7 +119,7 @@ const handleFilter = () => {
 
 const search = () => {
     const searchList = document.querySelector(".search__list")
-    const html = data.product.map((a, i) => `<a href="/detail.html?${i}" data-search="${toSlug(a.name)}" class="search__item d-block p-3">
+    const html = data.product.map((a, i) => `<a href="detail.html?${i}" data-search="${toSlug(a.name)}" class="search__item d-block p-3">
     ${a.name}
 </a>`).join("")
     searchList.innerHTML = html
