@@ -1,0 +1,35 @@
+/* ========================== IMPORT FONT ========================== */
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;400;500;600;700&display=swap');
+
+/* ========================== RESET CSS ========================== */
+:root {
+  --main-color: #99d31b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Radio Canada", serif;
+}
+
+html {
+  font-size: 62.5%;
+  will-change: scroll-position;
+  position: relative;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}

@@ -1,0 +1,307 @@
+/* ============================ HEADER CSS ============================ */
+
+.header__nav-link {
+    font-size: 1.6rem;
+    color: #141E21;
+    font-weight: 600;
+    transition: .2s ease-in-out;
+    border-radius: 20px;
+}
+
+.header__nav-link:hover {
+    color: #94949C;
+}
+
+.header__nav-link.active {
+    box-shadow: inset 5px 5px 8px 0 #39484e3a,
+        5px 5px 8px 0 #39484e3a;
+}
+
+/* ============================== HOME PAGE ============================== */
+.home__banner img {
+    border-radius: 20px;
+    border: 20px solid #141E21;
+}
+
+.home__banner-btn {
+    background-color: #141E21;
+    color: #eee;
+    font-size: 1.8rem;
+    border-radius: 3px;
+    transition: all .2s ease-in-out;
+}
+
+.home__banner-btn:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: inset 3px 3px 5px -2px #CDCECF,
+        5px 5px 8px -3px #141E21,
+        5px 5px 8px 0 #CDCECF;
+    color: #eee;
+}
+
+/* ============================= SHOP PAGE ============================= */
+.shop {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    gap: 15px;
+}
+
+.shop__cates {
+    border: 1px solid #CDCECF;
+    border-radius: 2px;
+    height: 90vh;
+    position: sticky;
+    top: 5vh;
+    overflow-y: auto;
+}
+
+.shop__cates-title {
+    font-size: 1.6rem;
+}
+
+.shop__cates-title i {
+    font-size: 1.5rem;
+}
+
+.cates {
+    font-size: 1.4rem;
+}
+
+.cate {
+    cursor: pointer;
+    border-top: 1px solid #CDCECF;
+}
+
+.cate i {
+    font-size: 1.2rem;
+    visibility: hidden;
+}
+
+.cate.active i {
+    visibility: visible;
+}
+
+.price__option-title {
+    font-size: 1.6rem;
+}
+
+.price__option>p>input {
+    cursor: pointer;
+}
+
+.price__option>p>label {
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.shop__controls {
+    border: 1px solid #CDCECF;
+    margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: 15px;
+}
+
+.control__sort span {
+    font-size: 1.5rem;
+    margin-right: 16px;
+}
+
+.sort__options {
+    padding: 0 4px;
+    font-size: 1.5rem;
+    outline: none;
+    border: none;
+    background-color: #CDCECF;
+}
+
+.control__search {
+    height: 100%;
+}
+
+.filter__input,
+.search__input {
+    height: 100%;
+    border-left: 1px solid #CDCECF;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+.search__list {
+    z-index: 2;
+    background-color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(37, 51, 60, 0.2);
+    max-height: 200px;
+    overflow-y: auto;
+    visibility: visible;
+}
+
+.search__item {
+    font-size: 1.3rem;
+    color: #141E21;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: none !important;
+}
+
+.search__item.active {
+    display: block !important;
+}
+
+.search__item.active.focus {
+    background-color: #25333c1f;
+}
+
+.search__btn {
+    height: 100%;
+    background-color: #ACBCBE;
+}
+
+
+
+.search__btn i {
+    font-size: 2rem;
+}
+
+
+.shop__products {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+}
+
+.product {
+    box-shadow: 0 0 3px 0 #CDCECF;
+}
+
+.product__img {
+    background-size: cover;
+    height: 200px;
+    background-position: center;
+    position: relative;
+}
+
+.product__tag {
+    position: absolute;
+    top: 8px;
+    left: -6px;
+    background-color: var(--main-color);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 0 0 15px #25333C;
+}
+
+.product__tag::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 3px solid;
+    border-color: var(--main-color) var(--main-color) transparent transparent;
+    filter: brightness(.8);
+}
+
+.product__name {
+    font-size: 1.8rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-height: 2.3rem;
+    height: 4.6rem;
+    overflow: hidden;
+}
+
+.product__price {
+    font-size: 1.6em;
+}
+
+.product__rate {
+    font-size: 2rem;
+}
+
+.product__bought {
+    font-size: 1.2rem;
+}
+
+.product__origin {
+    color: #A2A8AE;
+}
+
+.product__add {
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 3px;
+    background-color: var(--main-color);
+    color: #25333C;
+    transition: color .2s;
+}
+
+.product__add:hover {
+    color: #eee;
+    opacity: .8;
+}
+
+/* =============================== DETAIL =============================== */
+.detail__back {
+    font-size: 1.6rem;
+    color: #25333C;
+}
+
+.detail__name {
+    font-size: 3rem;
+}
+
+.detail__title {
+    font-size: 1.4rem;
+}
+
+.detail__param {
+    font-size: 1.6rem;
+}
+
+.boder-top-bottom {
+    border: 1px solid;
+    border-color: #A2A8AE transparent;
+}
+
+/* ============================== LOAD CSS ============================== */
+.modal__load {
+    position: fixed;
+    inset: 0;
+    background-color: #25333C;
+}
+
+.modal__load.hidden {
+    display: none !important;
+}
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
