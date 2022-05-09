@@ -19,3 +19,15 @@ export const toSlug = str => {
         .replace(/\s+/g, "-")
     return result
 }
+
+export const checkInput = (input, text, mess) => {
+    let txtMess = text === "" ? "*Không được để trống"
+        : /\s+/g.test(text)
+            ? "*Không được chứa khoảng cách"
+            : !/[\w]{6,}/.test(text)
+                ? "*Phải trên 6 ký tự"
+                : ""
+    const messElement = input.parentElement.querySelector(mess)
+    messElement.innerText = txtMess
+    return txtMess === ""
+}

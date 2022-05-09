@@ -273,6 +273,66 @@
     border-color: #A2A8AE transparent;
 }
 
+/* =========================== ACCOUNT CSS =========================== */
+.background-fashion {
+    background-image: url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZmFzaGlvbnxlbnwwfHwwfHw%3D&w=1000&q=80");
+    min-height: 80vh;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.form__user {}
+
+.form__title {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.form__label {
+    font-size: 1.6rem;
+}
+
+.form__input {
+    border: 1px solid #94949C;
+    border-radius: 20px;
+    font-size: 1.4rem;
+}
+
+.form__btn {
+    font-size: 1.6rem;
+    border-radius: 3px;
+    background-color: var(--main-color);
+    transition: .2s ease;
+}
+
+.form__btn:hover {
+    color: #eee;
+    transform: scale(1.01);
+}
+
+.greeting {
+    font-size: 2rem;
+}
+
+.user__name {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.to__cart {
+    font-size: 1.5rem;
+    background-color: var(--main-color);
+    color: #fff;
+    transition: .2s linear;
+    border-radius: 20px;
+}
+
+.to__cart:hover {
+    transform: scale(1.03);
+    color: #25333C;
+}
+
 /* ============================== LOAD CSS ============================== */
 .modal__load {
     position: fixed;
