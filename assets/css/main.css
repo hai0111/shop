@@ -39,6 +39,22 @@
     color: #eee;
 }
 
+.fz4r {
+    font-size: 4rem;
+}
+
+.fw700 {
+    font-weight: 700;
+}
+
+.text-no-wrap {
+    white-space: nowrap;
+}
+
+.radius-circle {
+    border-radius: 50%;
+}
+
 /* ============================= SHOP PAGE ============================= */
 .shop {
     display: grid;
