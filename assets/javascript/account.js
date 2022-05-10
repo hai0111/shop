@@ -11,7 +11,7 @@ const renderUser = async () => {
         <p class="user__name mb-5">
             ${name}
         </p >
-    <a href="#" class="to__cart d-block px-5 py-3">Tới giỏ hàng</a>
+    <a href="./cart.html" class="to__cart d-block px-5 py-3">Tới giỏ hàng</a>
     <a href="#login" class="mt-5" id="logout" style="font-size: 1.5rem">Đăng xuất</a>
 `
     const logout = document.querySelector("#logout")
