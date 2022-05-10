@@ -92,7 +92,6 @@ const renderProfucts = (z, x = "", v = "", p = "price1") => {
     const addBtns = document.querySelectorAll(".product__add")
     addBtns.forEach(a => {
         a.addEventListener("click", e => {
-            console.log(e.target.dataset.id)
             addProduct(e.target.dataset.id)
         })
     })
@@ -100,8 +99,12 @@ const renderProfucts = (z, x = "", v = "", p = "price1") => {
 
 const addProduct = async data => {
     const uid = localStorage.getItem("uid")
-    console.log(uid)
     if (uid) {
+        const thanks = document.querySelector("#thanksForBuy")
+        thanks.style.display = "block"
+        setTimeout(() => {
+            thanks.style.display = "none"
+        }, 2000)
         const userData = await getUsers(uid)
         await fetch("https://627639a1bc9e46be1a1462ea.mockapi.io/shop/users/" + uid,
             {

@@ -4,7 +4,7 @@
     font-size: 1.6rem;
     color: #141E21;
     font-weight: 600;
-    transition: .2s ease-in-out;
+    transition: color .2s ease-in-out;
     border-radius: 20px;
 }
 
@@ -242,6 +242,65 @@
 .product__add:hover {
     color: #eee;
     opacity: .8;
+}
+
+.pof-center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main {
+    color: var(--main-color);
+}
+
+.fz5r {
+    font-size: 5rem;
+}
+
+.fz15 {
+    font-size: 1.5rem;
+}
+
+.bg-white {
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 #25333C;
+}
+
+.radius-10 {
+    border-radius: 10px;
+}
+
+.show-then-hidden {
+    animation: showThenHiden 2s ease forwards;
+}
+
+@keyframes showThenHiden {
+    0% {
+        opacity: 0;
+        transform: scale(.7);
+    }
+
+    15% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    85% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(.7);
+        visibility: hidden;
+    }
+}
+
+.none {
+    display: none;
 }
 
 /* =============================== DETAIL =============================== */
