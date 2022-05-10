@@ -115,6 +115,7 @@ const renderCart = async uid => {
             id: key,
             name: curr.name,
             price: curr.price,
+            rate: curr.rating,
             quantity: keys[key]
         })
     }
@@ -123,7 +124,7 @@ const renderCart = async uid => {
         <p class="limit-text-1 fz13 m-0">
             ${a.name}
         </p>
-        <span class="fz2 min-content" style="background: linear-gradient(90deg, rgb(255, 208, 0) 50%, #999 50%);
+        <span class="fz2 min-content" style="background: linear-gradient(90deg, rgb(255, 208, 0) ${a.rate / 5 * 100}%, #999 ${a.rate / 5 * 100}%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;">★★★★★</span>
     </div>
