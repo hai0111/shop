@@ -88,7 +88,7 @@ window.addEventListener("load", async () => {
 // ============================= METHOD =============================
 const renderError = () => {
     return `<div class="d-flex flex-column align-items-center py-5">
-    <img src="https://www.pinclipart.com/picdir/big/383-3836579_designing-and-building-websites-set-web-page-design.png"
+    <img src="./assets/images/login__pls.png"
         alt="" class="w-50">
     <a href="./account.html" class="fz2 fw-500 mt-5 bg-primary-mine fff px-5 py-3"
         style="border-radius: 50px; transition: .2s;">Vui lòng
