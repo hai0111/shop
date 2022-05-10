@@ -153,7 +153,7 @@ const handleFilter = () => {
 
 const search = () => {
     const searchList = document.querySelector(".search__list")
-    const html = data.product.map((a, i) => `<a href="detail.html?${i}" data-search="${toSlug(a.name)}" class="search__item d-block p-3">
+    const html = data.product.map((a, i) => `<a href="./detail.html?${i}" data-search="${toSlug(a.name)}" class="search__item d-block p-3">
     ${a.name}
 </a>`).join("")
     searchList.innerHTML = html
