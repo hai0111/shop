@@ -19,7 +19,6 @@ const renderUser = async () => {
         localStorage.removeItem("uid")
     })
 }
-
 const renderLogin = () => {
     boxContent.innerHTML =
         `<p class="form__title text-center mb-5" >
@@ -43,6 +42,11 @@ const renderLogin = () => {
     loginBtn.addEventListener("click", e => {
         e.preventDefault()
         handleLogin(userInput.value, passInput.value)
+    })
+    passInput.addEventListener("keypress", e => {
+        if (e.keyCode === 13) {
+            handleLogin(userInput.value, passInput.value)
+        }
     })
 }
 
@@ -86,7 +90,7 @@ const renderRegister = () => {
     const nameInput = document.querySelector("#name__register")
     const userInput = document.querySelector("#user__register")
     const passInput = document.querySelector("#pass__register")
-    registerBtn.addEventListener("click", async () => {
+    const handleRegister = async () => {
         const inputs = document.querySelectorAll(".form__input.check")
         let check = true
         inputs.forEach(a => {
@@ -115,6 +119,22 @@ const renderRegister = () => {
             passInput.value = ""
             window.location.hash = "#login"
         }
+    }
+    registerBtn.addEventListener("click", handleRegister)
+    nameInput.addEventListener("keypress", e => {
+        if (e.keyCode === 13) {
+            handleRegister()
+        }
+    })
+    userInput.addEventListener("keypress", e => {
+        if (e.keyCode === 13) {
+            handleRegister()
+        }
+    })
+    passInput.addEventListener("keypress", e => {
+        if (e.keyCode === 13) {
+            handleRegister()
+        }
     })
 }
 
@@ -126,19 +146,21 @@ const renderError = () => {
 }
 
 const checkHash = () => {
-    const hash = window.location.hash
-    switch (hash) {
-        case "#login":
-            renderLogin()
-            break
-        case "#" + localStorage.getItem("uid"):
-            renderUser()
-            break
-        case "#register":
-            renderRegister()
-            break
-        default:
-            renderError()
+    if (boxContent) {
+        const hash = window.location.hash
+        switch (hash) {
+            case "#login":
+                renderLogin()
+                break
+            case "#" + localStorage.getItem("uid"):
+                renderUser()
+                break
+            case "#register":
+                renderRegister()
+                break
+            default:
+                renderError()
+        }
     }
 }
 
@@ -158,7 +180,7 @@ window.addEventListener("popstate", checkHash)
 
 
 // ========================= HANDLE API =========================
-const getUsers = async (id = "") => {
+export const getUsers = async (id = "") => {
     return fetch("https://627639a1bc9e46be1a1462ea.mockapi.io/shop/users/" + id).then(json => json.json())
 }
 

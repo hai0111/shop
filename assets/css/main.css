@@ -20,7 +20,7 @@
 /* ============================== HOME PAGE ============================== */
 .home__banner img {
     border-radius: 20px;
-    border: 20px solid #141E21;
+    border: 20px solid var(--main-color);
 }
 
 .home__banner-btn {
@@ -332,6 +332,69 @@
     transform: scale(1.03);
     color: #25333C;
 }
+
+/* ============================== CART CSS ============================== */
+.grid {
+    display: grid;
+}
+
+.cart-template {
+    grid-template-columns: 50% 1fr 1fr;
+    gap: 3px;
+    margin-top: 3px;
+}
+
+.limit-text-1 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.fz2 {
+    font-size: 2rem;
+}
+
+.min-content {
+    width: min-content;
+}
+
+.bg-primary {
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.shadow-cart {
+    box-shadow: 0 0 3px #CDCECF;
+}
+
+.fff {
+    color: #fff;
+}
+
+.bg-primary-mine {
+    background-color: var(--main-color);
+}
+
+.height-60 {
+    height: 60px;
+}
+
+.radius-3 {
+    border-radius: 3px;
+}
+
+.fz13 {
+    font-size: 1.3rem;
+}
+
+.fade-background {
+    background-color: #CDCECF;
+}
+
 
 /* ============================== LOAD CSS ============================== */
 .modal__load {

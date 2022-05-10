@@ -1,3 +1,4 @@
+import { getUsers } from "./account.js";
 import data from "./data.js"
 import { toSlug, toThousand } from './extensions.js'
 
@@ -83,12 +84,42 @@ const renderProfucts = (z, x = "", v = "", p = "price1") => {
         <p class="product__origin my-4">
             ${a.origin}
         </p>
-        <button class="product__add py-3 w-100" data-id="${a.id}">
+        <button class="product__add py-3 w-100" data-id="${data.product.indexOf(a)}">
             Thêm vào giỏ hàng
         </button></div>
     </div > `).join("")
     products.innerHTML = html
-};
+    const addBtns = document.querySelectorAll(".product__add")
+    addBtns.forEach(a => {
+        a.addEventListener("click", e => {
+            console.log(e.target.dataset.id)
+            addProduct(e.target.dataset.id)
+        })
+    })
+}
+
+const addProduct = async data => {
+    const uid = localStorage.getItem("uid")
+    console.log(uid)
+    if (uid) {
+        const userData = await getUsers(uid)
+        await fetch("https://627639a1bc9e46be1a1462ea.mockapi.io/shop/users/" + uid,
+            {
+                method: "PUT",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    products: [
+                        ...userData.products,
+                        data
+                    ]
+                })
+            })
+    } else {
+        window.location = "./account.html"
+    }
+}
 
 const handleFilter = () => {
     const options = document.querySelector(".sort__options")
@@ -153,7 +184,7 @@ const search = () => {
     })
     items.forEach(a => {
         a.addEventListener("click", () => {
-            searchInput.value = ""
+            searchInput.value = ".product__add"
         })
     })
     searchInput.addEventListener("keypress", e => {
