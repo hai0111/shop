@@ -5,9 +5,10 @@ import { toThousand } from "./extensions.js"
 window.addEventListener("load", async () => {
     const main = document.querySelector("#cart > div")
     const uid = localStorage.getItem("uid")
-    let html = ""
+    let jsx = ""
     if (uid) {
-        html = `<div class="grid cart-template">
+        const { html, total } = await renderCart(uid)
+        jsx = `<div class="grid cart-template">
         <div class="fade-background radius-3 text-center py-3 fz13">
             Tên
         </div>
@@ -19,7 +20,7 @@ window.addEventListener("load", async () => {
         </div>
     </div>
     <div class="cart__list">
-        ${await renderCart(uid)}
+        ${html}
     </div>
     <div class="grid cart-template mt-4 mb-5">
         <div
@@ -28,16 +29,16 @@ window.addEventListener("load", async () => {
         </div>
         <div
             class="fade-background d-flex align-items-center justify-content-center radius-3 text-center py-3 fz13">
-            1000,000VND
+            ${toThousand(total)}VNĐ
         </div>
         <button class="radius-3 text-center py-3 fz13 fw500 bg-primary-mine fff">
             Thanh toán
         </button>
     </div>`
     } else {
-        html = renderError()
+        jsx = renderError()
     }
-    main.innerHTML = html
+    main.innerHTML = jsx
 })
 
 // ============================= METHOD =============================
@@ -71,6 +72,9 @@ const renderCart = async uid => {
             quantity: keys[key]
         })
     }
+    const total = products.reduce((a, b) => {
+        return a += (+b.price * +b.quantity)
+    }, 0)
     const html = products.map(a => `<div class="grid height-60 cart-template">
     <div class="shadow-cart d-flex flex-column justify-content-center px-5 radius-3 py-3 fz13">
         <p class="limit-text-1 fz13 m-0">
@@ -93,5 +97,8 @@ const renderCart = async uid => {
         </button>
     </div>
 </div>`).join("")
-    return html
+    return {
+        html,
+        total
+    }
 }
