@@ -187,7 +187,7 @@ const search = () => {
     })
     items.forEach(a => {
         a.addEventListener("click", () => {
-            searchInput.value = ".product__add"
+            searchInput.value = ""
         })
     })
     searchInput.addEventListener("keypress", e => {
@@ -196,13 +196,6 @@ const search = () => {
             if (item) {
                 item.click()
             }
-        }
-    })
-    searchInput.addEventListener("keydown", e => {
-        switch (e.keyCode) {
-            case 40:
-                console.log("down")
-                break
         }
     })
     searchBtn.addEventListener("click", () => {
