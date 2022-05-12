@@ -55,6 +55,100 @@
     border-radius: 50%;
 }
 
+.obj-fit-cover {
+    object-fit: cover;
+    object-position: center;
+}
+
+.hover__introduce {}
+
+.over-flow-hidden {
+    overflow: hidden;
+}
+
+.box-shadow {
+    box-shadow: 0 0 5px 0 #25333C;
+}
+
+.inset-0 {
+    inset: 0;
+}
+
+.txt-fff {
+    color: #fff;
+}
+
+.fz-1d6r {
+    font-size: 1.6rem;
+}
+
+.fz-2d5r {
+    font-size: 2.5rem;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.hover-active-opacity {
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+.hover:hover .hover-active-opacity {
+    opacity: 1;
+}
+
+.select-none {
+    user-select: none;
+}
+
+.left-120p {
+    left: 120%;
+}
+
+.hover-x-120p,
+.hover-x--120p {
+    transition: transform .2s ease;
+}
+
+.hover:hover .hover-x-120p,
+.hover-x-120p:hover {
+    transform: translateX(120%);
+}
+
+.hover:hover .hover-x--120p,
+.hover-x--120p:hover {
+    transform: translateX(-120%);
+}
+
+.hover-x-120p::after,
+.hover-x--120p::after {
+    content: "";
+    display: block;
+    width: 140%;
+    height: 140%;
+    left: -20%;
+    top: -20%;
+    position: absolute;
+}
+
+.delay-0d1 {
+    transition-delay: 0.1s;
+}
+
+.delay-0d2 {
+    transition-delay: 0.2s;
+}
+
+.index--1 {
+    z-index: -1;
+}
+
+.index-1 {
+    z-index: 1;
+}
+
 /* ============================= SHOP PAGE ============================= */
 .shop {
     display: grid;
