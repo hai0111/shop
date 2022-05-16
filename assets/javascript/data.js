@@ -140,6 +140,7 @@ export default {
         {
             name: "BALO A2BLD11104",
             tag: "#1phụ kiện",
+            sale: 25,
             cate: "Phụ kiện",
             img: "https://mcdn.nhanh.vn/store/7136/ps/20211115/15112021111132_5L7A7720.jpg",
             price: 285000,

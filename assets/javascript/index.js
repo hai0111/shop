@@ -6,7 +6,7 @@ const renerHightlight = (() => {
     const jsx = [...data.product]
         .sort((a, b) => b.bought - a.bought)
         .slice(0, 5)
-        .map(a => `<a href="./detail.html?${data.product.indexOf(a)}" class="txt-main position-relative hover hover-shadow-fade radius-10 mb-5 box-shadow hover__introduce index-1">
+        .map(a => `<a href="./detail.html?${data.product.indexOf(a)}" class="txt-main position-relative hover hover-shadow-fade radius-10 mb-5 box-shadow-fade hover__introduce index-1">
         ${a.tag && a.tag !== "" ? '<span class="product__tag px-3 index-1">' + a.tag + '</span>' : ""}
         <img src="${a.img}"
             alt="member1" class="w-100 radius-10 obj-fit-cover" height="300">
@@ -33,8 +33,8 @@ const renerSale = (() => {
         .filter(a => a.sale !== undefined && a.sale !== "")
         .slice(0, 5)
         .map(a => `<a href="./detail.html?${data.product.indexOf(a)}"
-        class="txt-main position-relative hover hover-shadow-fade radius-10 mb-5 box-shadow hover__introduce index-1">
-        <span class="product__tag px-3 index-1">hot</span>
+        class="txt-main position-relative hover hover-shadow-fade radius-10 mb-5 box-shadow-fade hover__introduce index-1">
+        ${a.tag && a.tag !== "" ? `<span class="product__tag px-3 index-1">${a.tag}</span>` : ""}
         <div class="position-absolute top-0 end-0 index-1" style="width: 40px;">
             <img src="./assets/images/sale__tag.png" alt="" class="obj-fit-cover w-100 shadow-eee">
             <span class="position-absolute top-50 start-50 translate-middle fw-600 txt-fff">${a.sale}%</span>

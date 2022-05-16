@@ -68,6 +68,10 @@
     box-shadow: 0 0 5px 0 #25333C;
 }
 
+.box-shadow-fade {
+    box-shadow: 0 0 5px 0 rgba(37, 51, 60, 0.2);
+}
+
 .inset-0 {
     inset: 0;
 }
@@ -197,7 +201,7 @@
 
 .hover:hover.hover-shadow-fade,
 .hover-shadow-fade:hover {
-    box-shadow: 0 0 10px 0 #25333C;
+    box-shadow: 0 0 10px 0 rgba(37, 51, 60, 0.5);
 }
 
 .bg-eee {
