@@ -32,20 +32,23 @@ const renderLogin = () => {
             <label class="col-4 pe-3 text-end form__label" for="pass__login">Mật khẩu: </label>
             <input type="password" class="form__input py-2 px-3 col" id="pass__login">
         </div>
-        <div class="input__wrap d-flex w-100 align-items-center">
-            <button class="mx-auto form__btn login px-5 py-3 mt-5">Đăng nhập</button>
+        <div class="input__wrap d-flex flex-column mt-5 w-100 align-items-center justify-content-center">
+            <p id="toast__login" class="fz-1d2r" style="color: red;"></p>
+            <button class="mx-auto form__btn login px-5 py-3">Đăng nhập</button>
         </div>
         <a href="#register" class="text-end mt-5">Bạn chưa có tài khoản?Đăng ký ngay.</a>`
     const loginBtn = document.querySelector(".form__btn.login")
     const userInput = document.querySelector("#user__login")
     const passInput = document.querySelector("#pass__login")
-    loginBtn.addEventListener("click", e => {
+    const toast = document.querySelector("#toast__login")
+    loginBtn.addEventListener("click", async e => {
         e.preventDefault()
-        handleLogin(userInput.value, passInput.value)
+        toast.textContent = await handleLogin(userInput.value, passInput.value)
     })
-    passInput.addEventListener("keypress", e => {
+    passInput.addEventListener("keypress", async e => {
         if (e.keyCode === 13) {
-            handleLogin(userInput.value, passInput.value)
+            console.log
+            toast.textContent = await handleLogin(userInput.value, passInput.value)
         }
     })
 }
@@ -55,8 +58,11 @@ const handleLogin = async (user, pass) => {
     const main = data.find(a => a.user === user && a.pass === pass)
     if (main) {
         localStorage.setItem("uid", main?.id)
+        checkUser()
+        return ""
+    } else {
+        return "Tài khoản và mật khẩu không đúng"
     }
-    checkUser()
 }
 
 const renderRegister = () => {

@@ -515,7 +515,9 @@
     border-radius: 10px;
 }
 
-.form__user {}
+.fz-1d2r {
+    font-size: 1.2rem;
+}
 
 .form__title {
     font-size: 3rem;
