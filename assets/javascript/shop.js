@@ -76,10 +76,10 @@ const renderProfucts = (z, x = "", v = "", p = "price1") => {
         <p class="product__name m-0">
             ${a.name}
         </p>
-        <p class="fz-1d6r line-though" style="height: 1.6rem;">
+        <p class="fz-1d6r line-though mt-2 mb-0" style="height: 1.6rem;">
         ${a.sale ? toThousand(a.price) + "VNĐ" : ""}
         </p>
-        <p class="my-2 fz-1d6r">${a.sale ? toThousand(a.price - (a.price / 100 * a.sale)) : toThousand(a.price)}VNĐ</p>
+        <p class="mb-0 fz-1d6r">${a.sale ? toThousand(a.price - (a.price / 100 * a.sale)) : toThousand(a.price)}VNĐ</p>
         <span
             class="fz-2r mt-5"
             style="background: linear-gradient(90deg, rgb(255, 208, 0) ${a.rating / 5 * 100}%, #999 ${a.rating / 5 * 100}%);

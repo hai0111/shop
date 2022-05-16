@@ -215,6 +215,7 @@
 /* ============================= SHOP PAGE ============================= */
 .line-though {
     text-decoration: line-through 1.6px solid #25333C;
+    font-size: 1.4rem;
 }
 
 .shop {
