@@ -65,18 +65,23 @@ const renderProfucts = (z, x = "", v = "", p = "price1") => {
         })
         .map(a =>
             `<div class="product">
-    <a href="detail.html?${data.product.indexOf(a)}" class="w-100 d-block product__img" style="background-image: url('${a.img}')">
+    <a href="./detail.html?${data.product.indexOf(a)}" class="w-100 d-block product__img" style="background-image: url('${a.img}')">
         ${a.tag && a.tag !== "" ? '<span class="product__tag px-3">' + a.tag + '</span>' : ""}
+        ${a.sale && a.sale !== "" ? `<div class="position-absolute top-0 end-0" style="width: 40px;">
+        <img src="./assets/images/sale__tag.png" alt="" class="obj-fit-cover w-100 shadow-eee">
+        <span class="position-absolute top-50 start-50 translate-middle fw-600 txt-fff">${a.sale}%</span>
+    </div>` : ""}
     </a >
     <div class="product__info p-4">
-        <p class="product__name">
+        <p class="product__name m-0">
             ${a.name}
         </p>
-        <p class="product__price m-0">
-            ${toThousand(a.price)}VNĐ
+        <p class="fz-1d6r line-though" style="height: 1.6rem;">
+        ${a.sale ? toThousand(a.price) + "VNĐ" : ""}
         </p>
+        <p class="my-2 fz-1d6r">${a.sale ? toThousand(a.price - (a.price / 100 * a.sale)) : toThousand(a.price)}VNĐ</p>
         <span
-            class="product__rate mt-5"
+            class="fz-2r mt-5"
             style="background: linear-gradient(90deg, rgb(255, 208, 0) ${a.rating / 5 * 100}%, #999 ${a.rating / 5 * 100}%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;">★★★★★</span>

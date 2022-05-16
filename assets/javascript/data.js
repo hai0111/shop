@@ -90,6 +90,7 @@ export default {
             name: "ÁO THUN U1ATN03205FOSBA",
             tag: "",
             cate: "Cặp đôi",
+            sale: 20,
             img: "https://mcdn.nhanh.vn/store/7136/psCT/20220309/37409217/a.jpg",
             price: 320000,
             rating: 5,
@@ -152,6 +153,7 @@ export default {
             cate: "Phụ kiện",
             img: "https://mcdn.nhanh.vn/store/7136/ps/20211115/15112021101118_5L7A7802.jpg",
             price: 225000,
+            sale: 15,
             rating: 2.4,
             bought: 13,
             origin: "Hàn Quốc"
@@ -359,6 +361,7 @@ export default {
         {
             name: "Đầm lead ôm cổ tim lệch hoa eo trang trí",
             tag: "",
+            sale: 15,
             cate: "Thời trang nữ",
             img: "https://mcdn.nhanh.vn/store2/83109/ps/20220412/L452008__1_.jpg",
             price: 1080000,
@@ -412,6 +415,7 @@ export default {
             cate: "Thời trang nữ",
             img: "https://guco.vn/UploadImages/Data/News/3819/jumpsuit-ong-suong-3343-lg.jpg?scale.width=112",
             price: 580000,
+            sale: 30,
             rating: 4.5,
             bought: 53,
             origin: "Việt Nam"
@@ -489,6 +493,7 @@ export default {
         {
             name: "Quần Jogger Linen",
             tag: "",
+            sale: 20,
             cate: "Thời trang nam",
             img: "https://oldsailor.com.vn/vnt_upload/product/04_2022/32020616b952780c21433.jpg",
             price: 425000,
